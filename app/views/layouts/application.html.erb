@@ -8,8 +8,9 @@
 </head>
 <body>
 <% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "alert alert-#{key}" %>
+  <%= content_tag :div, value, class: "alert alert-{key}" %>
 <% end %>
+<%=image_tag 'wwcLogo.png'%>
 
 <div class='container'>
   <%= yield %>
