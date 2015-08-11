@@ -1,2 +1,10 @@
 <h1>Static#home</h1>
 <p>Find me in app/views/static/home.html.erb</p>
+<%unless current_user%>
+  <%=link_to 'Login', new_user_session_path, :class => 'btn btn-success btn-lg'%>
+  <%=link_to 'Singup', new_user_registration_path, :class => 'btn btn-primary btn-lg'%>
+<%else%>
+  <%=link_to 'Logout', destroy_user_session_path,method: :delete, :class => 'btn btn-success btn-lg'%>
+  <%=link_to "Donation List", donations_path, :class => 'btn btn-primary btn-lg'%>
+<%end%>
+
