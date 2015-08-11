@@ -3,6 +3,7 @@ class Mailer < ActionMailer::Base
   
   def thank_donor(donation)
     @donation = donation
+    @date = Time.now.strftime("%B %d, %Y")
     mail to: @donation.email, subject: 'Thank you for your Donation'
   end
 end
